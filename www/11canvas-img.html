@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	用到的图片：<br>
+	<img src="../images/monai.jpg">
+	<br>
+	canvas画出图片:
+	<br>
+	<canvas id = "mycanvas" width = "240" height="297" style = "border:1px solid orange"></canvas>
+	<script type="text/javascript">
+		var c = document.getElementById("mycanvas");
+		var img = document.images[0];
+		var ctx = c.getContext("2d");
+		img.onload = function(){
+			ctx.drawImage(img,10,10);
+		}
+	</script>
+</body>
+</html>

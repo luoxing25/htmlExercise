@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id= "txt" value = "12">
+	只能输入数字
+	<script type="text/javascript">
+		var textarea = document.getElementById("txt");
+		textarea.onkeypress = function(ev){
+			var ev= ev||event;
+			var charcode=ev.charCode;
+			if(!/\d/.test(String.fromCharCode(charcode))&&charcode>9){
+				ev.preventDefault();
+			}
+
+		}
+		textarea.onpaste = function(){
+			var text = event.clipboardData.getData("text");
+			if(!/^\d*$/.test(text)){
+				event.preventDefault();
+			}
+		}
+	</script>
+</body>
+</html>

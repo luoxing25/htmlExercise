@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	window.onload = function(){
+		var c= document.getElementById("canvas");
+		var ctx = c.getContext("2d");
+		var image = document.images[0];
+		ctx.drawImage(image,0,0);
+		var imageData = ctx.getImageData(0,0,image.width,image.height);
+		var data = imageData.data;
+		var red,green,blue,alpha,len,average;
+		for(var i = 0,len = data.length; i<len;i+=4 ){
+			red = data[i];
+			green = data[i+1];
+			blue = data[i+2];
+			alpha = data[i+3];
+			average = Math.floor((red+green+blue)/3);
+			data[i]=average;
+			data[i+1]=average;
+			data[i+2]=average;
+		}
+		imageData.data = data;
+		ctx.putImageData(imageData,0,0);
+	}
+	</script>
+</head>
+<body>
+	<img src="4.jpg">
+	<canvas id = "canvas" width ="700" height="500" style = "border:1px solid red"></canvas>
+	
+</body>
+</html>

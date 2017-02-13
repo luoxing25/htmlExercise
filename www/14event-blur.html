@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload =function(){
+			var oTxt = document.getElementById("txt");
+			oTxt.onfocus = function(){
+				focus(this);
+			};
+			// 	if(oTxt.value=="请输入..."){
+			// 		oTxt.value= ""; 
+			// 	}
+				 
+			// };
+			oTxt.onblur = function(){
+				focus(this);
+			};
+			// 	if(oTxt.value==""){
+			// 		oTxt.value = "请输入...";
+			// 	}
+				
+			// };
+
+		}
+		function focus(obj,ev){
+			
+			var e=ev||event;
+			if(e.type=="focus"){
+				if(obj.value=="请输入..."){
+					obj.value= ""; 
+				}
+			}else if(e.type=="blur"){
+				if(obj.value==""){
+					obj.value = "请输入...";
+					
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id = "txt" value = "请输入...">
+</body>
+</html>

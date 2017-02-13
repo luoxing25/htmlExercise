@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload = function(){
+			var sel = document.getElementsByTagName("select")[0];
+			var textarea = document.forms[0].elements["textbox"];
+			var text = document.forms[0].elements["text1"]
+			sel.onchange = function(){
+				alert(sel.value);
+			}
+			text.onfocus = function(){
+				select(this);
+			}
+			textarea.onselect = function (){
+				alert(this.value.substring(this.selectionStart,this.selectionEnd));
+			}
+
+		}
+		function select(obj){
+			obj.select();
+		}
+	</script>
+</head>
+<body>
+<form>
+	<input name = "text1" type="text" size = "10" maxlength = "20" value = "abc" ><br>
+	<select>
+		<option>sss</option>
+		<option>ssa</option>
+		<option>ssd</option>
+	</select>
+	<br>
+	<textarea name = "textbox"rows = "10" cols = "20">please input...</textarea>
+</form>		
+	
+</body>
+</html>

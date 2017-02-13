@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var c = document.getElementById("mainCanvas");
+			var ctx = c.getContext("2d");
+			//绘制黑色的半圆
+			ctx.beginPath();
+			ctx.arc(200,200,80,Math.PI/2,1.5*Math.PI);
+			ctx.fillStyle = "black";
+			ctx.closePath();
+			ctx.fill();
+			//绘制白色半圆
+			ctx.beginPath();
+			ctx.arc(200,200,80,1.5*Math.PI,Math.PI/2);
+			ctx.fillStyle="white";
+			ctx.closePath();
+			ctx.fill();
+			//绘制黑色半圆中的白色半圆
+			ctx.beginPath();
+			ctx.arc(200,160,40,Math.PI/2,1.5*Math.PI);
+			ctx.fillStyle = "white";
+			ctx.closePath();
+			ctx.fill();
+			//绘制白色半圆中的黑色半圆
+			ctx.beginPath();
+			ctx.arc(200,240,40,1.5*Math.PI,Math.PI/2);
+			ctx.fillStyle = "black";
+			ctx.closePath();
+			ctx.fill();
+			//绘制黑色半圆中的白色半圆中的黑色点
+			ctx.beginPath();
+			ctx.arc(200,160,5,0,Math.PI*2);
+			ctx.fillStyle = "black";
+			ctx.closePath();
+			ctx.fill();
+			//绘制白色半圆中的黑色半圆中的白色点
+			ctx.beginPath();
+			ctx.arc(200,240,5,0,Math.PI*2);
+			ctx.fillStyle = "white";
+			ctx.closePath();
+			ctx.fill();
+		}
+	</script>
+</head>
+<body>
+	<canvas id = "mainCanvas" width="400" height="400" style="border:1px solid; background:#E1E1FF;"></canvas>
+</body>
+</html>

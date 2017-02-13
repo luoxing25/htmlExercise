@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	window.onload = function(){
+		var c= document.getElementById("myCanvas");
+		var oDiv= document.getElementById("myDiv");
+		
+		c.onmousemove = fn;
+			
+		function fn(e){
+		
+			var ev = e||event;
+			var x= ev.clientX;
+			var y = ev.clientY;
+			oDiv.innerHTML = "坐标："+x+","+y;
+		}
+	}
+
+		
+	</script>
+	
+</head>
+<body>
+	<canvas id = "myCanvas" width="200" height="200" style = "border:1px solid yellow"></canvas>
+	<div id= "myDiv"></div>
+	<canvas id = "myCanvas2" width = "200" height = "200" style = "border:1px solid red"></canvas>
+	<script type="text/javascript">
+		var c = document.getElementById("myCanvas2");
+		var ctx = c.getContext("2d");
+		ctx.beginPath();
+		ctx.arc(95,50,40,0,2*Math.PI);
+		ctx.stroke();
+	</script>
+</body>
+</html>

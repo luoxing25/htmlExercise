@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+
+
+	
+	
+
+	
+		try{
+			var cc = document.getElementById("p");
+cc.onmouseover = function(){
+		alert(event.clientX+","+event.clientY);
+	}
+		}catch(e){
+			alert(e.message);
+		}finally{
+			alert("在页面没有加载好无法获取dom对象，因此无法注册事件");
+		}
+	</script>
+</head>
+<body>
+	<span id = "p">4545</span>
+</body>
+</html>

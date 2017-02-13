@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	window.onload=function(){
+		var oBtn = document.getElementById("btn");
+		var oDiv = document.getElementById("sss");
+		oDiv.onclick = function(){
+			alert(this.id);
+		}
+		oBtn.onclick = function(event){
+			alert(this.id);
+			event.stopPropagation();//取消事件冒泡
+		}
+	}
+		
+	</script>
+</head>
+<body>
+<div id ="sss">
+	<input type="button" id="btn" value = "点击">
+</div>
+	
+</body>
+</html>

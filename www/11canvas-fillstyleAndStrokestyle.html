@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<canvas width="400" height="400" style="border:1px solid red;background: #fff">canvas</canvas>
+	<script type="text/javascript">
+		var c = document.getElementsByTagName("canvas")[0];
+		var ctx = c.getContext("2d");
+		ctx.fillStyle = "rgba(0,0,0,0.6)";
+		ctx.strokeStyle = "red";
+		ctx.fillRect(0,0,150,150);
+		ctx.fillStyle = "rgba(255,0,0,0.6)";
+		ctx.fillRect(200,200,-150,-150);
+		ctx.clearRect(75,75,50,50);
+		ctx.strokeStyle = "yellow";
+		ctx.lineWidth = 10;
+		ctx.lineCap = "butt";
+
+		ctx.strokeRect(210,210,100,100);
+		// ctx.fillRect(0,200,50,-50);
+	</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" size = "3" maxlength="5">
+	-
+	<input type="text" size = "3" maxlength="5">
+	-
+	<input type="text" size = "3" maxlength="4">
+	
+	<script type="text/javascript">
+		var oTexts = document.getElementsByTagName("input");
+
+		for(var i = 0 ; i< oTexts.length;i++){
+			oTexts[i].count = 0;
+			oTexts[i].index = i;
+			oTexts[i].onkeypress = function(ev){
+				var ev = ev||event;
+				if(!isnumber(ev)){
+					ev.preventDefault();
+				}else if(this.count<3){
+					this.count++;
+				}
+				
+			}
+			// oTexts[i].onfocus=function(){
+			// 	if(){
+
+			// 	}
+			// }
+			oTexts[i].onkeyup=function(){
+				if(this.count==3&&(this.index+1)<3){
+						oTexts[this.index+1].focus();	
+				}
+			}
+		}
+		function isnumber(ev){
+			var ev = ev||event;
+			var charcode = ev.charCode;
+			return !/\d/.test(String.fromCharCode(charcode))&&charcode>9&&!ev.ctrlKey?false:true;
+		}
+	</script>
+</body>
+</html>

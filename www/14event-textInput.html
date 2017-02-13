@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload = function(){
+			var oTxt = document.getElementById("txt");
+			var oDiv = document.getElementById("div1");
+			oTxt.ontextInput = function(ev){//没有这个方法？
+				var ev= ev||event;
+				// oDiv.innerHTML = ev.key;
+				alert(1);
+			}
+		}
+	</script>
+</head>
+<body>
+	请输入：
+	<input type="text" id = "txt">
+	<div id ="div1"></div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var doc = document.body;
+		var arr=[];
+		var ev=null;
+		doc.onkeypress= function(ev){
+			ev = ev||event;
+			arr.push(ev.keyCode);
+			if(ev.keyCode==13){
+				printKeyCode(arr);
+
+			}
+		}
+		function printKeyCode(arr){
+			alert(arr);
+		}
+		
+		
+	</script>
+</body>
+</html>

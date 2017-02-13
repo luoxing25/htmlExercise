@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<canvas width = "400" height = "400" style = "border:1px solid red">canvas</canvas>
+	<script type="text/javascript">
+		var c = document.getElementsByTagName("canvas")[0];
+		var ctx = c.getContext("2d");
+		ctx.strokeStyle="blue";
+		ctx.beginPath();
+		ctx.arc(200,200,150,0,Math.PI*2,false);
+		// ctx.stroke();
+		ctx.moveTo(200, 200);
+		ctx.lineTo(200,75);
+		ctx.moveTo(200, 200);
+		ctx.lineTo(90,200);
+		ctx.stroke();
+		ctx.font = "700 18px Arial";
+		ctx.textAlign = "center";
+		ctx.fillText("12",200,65);
+		// ctx.closePath();
+		// ctx.arcTo(50,50,100,100,20);
+	</script>
+</body>
+</html>
