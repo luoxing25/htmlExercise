@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width:200px;
+			height:200px;
+			background: #ccc;
+			display:none;
+		}
+		.yellow{
+			background:yellow;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			var tab1 = new TabSwitch("button");
+
+		};
+		 function TabSwitch(id){
+			this.buttons = document.getElementsByTagName(id);
+			this.divs = document.getElementsByTagName("div");
+			var _this = this;
+			for(var i =0;i<this.buttons.length;i++){
+				this.buttons[i].index = i;
+				this.buttons[i].onclick = function(){
+					_this.tab(this);
+				};
+			}
+		}
+
+		TabSwitch.prototype.tab = function(obtn){
+					for(i=0;i<this.buttons.length;i++){
+						this.buttons[i].className="";
+						this.divs[i].style.display="none";
+					}
+					obtn.className= "yellow";
+					this.divs[obtn.index].style.display = "block";
+		};
+	</script>
+</head>
+<body>
+	<button class = "yellow">1</button>
+	<button>2</button>
+	<button>3</button>
+	<div style = "display:block">111</div>
+	<div>222</div>
+	<div>333</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#main{height:150px;border:1px solid red;position:absolute ;}
+		.img{width:100px;height:100px;background:#14BFED;float:left;margin:30px 20px 0;position:relative;}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			var oDivs = document.getElementsByClassName("img");
+
+			for(var i = 0; i<oDivs.length;i++){
+				oDivs[i].timer = null;
+				oDivs[i].index = i;
+				oDivs[i].onmouseover = function(){
+					clearInterval(this.timer);
+					this.style.top=-10+"px";
+					this.style.background = "#09B8CE";
+					this.style.boxShadow = "7px 7px 3px 0px #3c3c3c";
+				};
+				oDivs[i].onmouseout = function(){
+					var oIndex = this.index;
+					this.timer = setInterval(function(){
+						oDivs[oIndex].style.top=0+"px";
+						oDivs[oIndex].style.background = "#14BFED";
+						oDivs[oIndex].style.boxShadow = "";
+					},200);
+					
+				};
+			}
+		};
+	</script>
+</head>
+<body>
+	<div id  = "main">
+		<div class = "img"></div>
+		<div class = "img"></div>
+		<div class = "img"></div>
+		<div class = "img"></div>
+		<div class = "img"></div>
+		<div class = "img"></div>
+		<div class = "img"></div>
+		<div class = "img"></div>
+	</div>
+</body>
+</html>

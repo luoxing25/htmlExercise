@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" onclick ="fn(event)" onmou>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function fn(e){
+			var obj = document.createElement("img");
+			obj.src="images/bg10_small.jpg";
+			obj.title="美女";
+			obj.width=Math.floor(Math.random()*100+50);
+			var x = Math.random()*1200;
+			var y = Math.random()*500;
+			obj.style.position="absolute";
+			obj.style.top=y+"px";
+			obj.style.left=x+"px";
+			document.body.appendChild(obj);
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

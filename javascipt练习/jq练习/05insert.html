@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src = "../js/jquery.min.js"></script>
+	<style type="text/css">
+		div{width:200px;height:30px;background: red}
+		#p{width: 500px;height:300px;background: #ccc;display:none;}
+	</style>
+</head>
+<body>
+	<div>这是div</div>
+	<p id ="p">我是p标签</p>
+	<script type="text/javascript">
+		
+		$("div").mouseover(function (){
+			// $("div").before("<b>这是b标签</b>");
+			// $("div").after("<b>这是b标签</b>");
+			$('#p').slideDown();
+		});
+		$("div").mouseout(function(){
+			if(fn()){
+				$('#p').slideUp();
+			}
+			
+		});
+		function fn(){
+			var sign=true ;
+			$('#p').mouseover(function() {
+				// $("#p").show();
+				sign = false;
+			});
+			
+			return sign;
+		}
+		
+	</script>
+</body>
+</html>

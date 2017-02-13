@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			height:200px;
+			border:2px solid red;
+			background: black;
+			font-size:36px;
+			color:white;
+			text-align:center;
+			line-height: 200px;
+			cursor:crosshair;
+		}
+	</style>
+	<script type="text/javascript">
+	function fn(e){
+		var x=e.clientX;
+		var y=e.clientY;
+		var div1=document.getElementById("div1");
+		div1.innerHTML="坐标"+x+","+y;
+
+	}
+	function fn2(){
+		var div1= document.getElementById("div1");
+		div1.style.fontSize="40px";
+		div1.innerHTML="修改成功";
+
+	}
+	
+		
+	</script>	
+	
+</head>
+<body>
+	<div id= "div1" onmousemove="fn(event)">
+		坐标0,0
+	</div>
+	<textarea rows= "10" cols="30" onchange="fn2()">
+		
+	</textarea>
+</body>
+</html>

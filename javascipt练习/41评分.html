@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}	
+		#main{
+			width:135px;
+			height:27px;
+			margin:10px auto;
+		}
+		#main li{
+			width:27px;
+			height:27px;
+			float:left;
+			background:url("images/star.gif") no-repeat 0 0;
+			list-style: none;
+		}
+	
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			var main = document.getElementById("main");
+			var lis = main.getElementsByTagName("li");
+			for(var i = 0; i<lis.length;i++){
+				lis[i].index = i;
+				lis[i].onmouseover=function(){
+					for(i = 0; i<lis.length;i++){
+						if(i<=this.index){
+							lis[i].style.background = "url(images/star.gif) no-repeat 0 -29px";
+						}else{
+							lis[i].style.background = "url(images/star.gif) no-repeat 0 0";
+						}
+					}
+				};
+				lis[i].onmousedown=function(){
+					alert("您的评分是"+(this.index+1)+"分");
+				};
+			}
+
+		};
+	</script>
+
+</head>
+<body>
+	<div id ="main">
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+</body>
+</html>

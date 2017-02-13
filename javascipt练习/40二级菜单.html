@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		ul{
+			list-style:none;
+			margin:5px;
+			margin-top:0;
+			padding:0;
+			background:#ccc;
+		}
+		ul li{
+			margin-bottom: 5px;
+		}
+		#first{
+			width:80px;
+			background: #4A86DE;
+		}
+		.hide{
+			
+			display: none;
+		}
+		.show{
+			margin:0;
+			width:80px;
+			display: inline-block;
+		}
+
+
+	</style>
+	<script type="text/javascript">
+		window.onload= function(){
+			var first = document.getElementById("first");
+			var second =document.getElementById("second");
+			var divs = document.getElementsByTagName("div");
+			var lis = document.getElementsByName("li");
+			var sign = true;
+			first.onclick = function(){
+				if (sign) {
+					second.className = "show";
+					for(var i = 0;i<lis.length;i++){
+						lis[i].index = i;
+
+						lis[i].onmouseover=function(){
+							for(i=0;i<lis.length;i++){
+								divs[i].className = "hide";
+							}
+							
+							divs[this.index].className="show";
+						}
+					}
+					sign = false;
+				}else{
+					second.className = "hide";
+					for(i=0;i<divs.length;i++){
+						divs[i].className = "hide";
+					}
+					sign = true;
+				}
+			};
+			
+		};
+	</script>
+</head>
+<body>
+	<p id = "first">全部分类</p>
+	
+		<ul id ="second" class = "hide">
+			<li name = "li">电脑</li>
+			<li name = "li">手机</li>
+			<li name = "li">平板</li>
+		</ul>
+	
+	<div id ="computer" class = "hide">
+		<ul>
+			<li>联想</li>
+			<li>苹果</li>
+			<li>华硕</li>
+		</ul>
+	</div>
+	<div id ="phone" class = "hide">
+		<ul>
+			<li>苹果</li>
+			<li>小米</li>
+			<li>魅族</li>
+		</ul>
+	</div>
+	<div id ="pad" class = "hide">
+		<ul>
+			<li>华硕</li>
+			<li>苹果</li>
+			<li>微软</li>
+		</ul>
+	</div>
+</body>
+</html>

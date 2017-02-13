@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function Person () {};
+		var p = new Person();
+		var p1 = ""+p.constructor;
+		var start =p1.replace("function","|").indexOf("|");
+		var end = p1.replace("function","|").indexOf("(");
+		if(start!==-1&&end!==-1){
+			var name = p1.replace("function","|").slice(start+2,end);
+			alert("|"+name+"|");
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

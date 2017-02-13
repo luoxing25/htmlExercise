@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var number=Number(prompt("请输入一串数字"));
+		if(number){
+			number=parseInt(number);
+			do{
+				
+				var tmp=number%10;
+				number/=10;
+				number=parseInt(number);
+				console.log(tmp);
+
+			}while(number!==0);
+
+		}else if(number===0){
+			document.write(number);
+		}else{
+			console.log("sorry,it\'s not a number");
+		}
+		</script>
+</head>
+<body>
+	<h1>测试js代码异步执行</h1>
+</body>
+</html>

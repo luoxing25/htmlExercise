@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function getDate(year,month,day){
+			var months=[31,28,31,30,31,30,31,31,30,31,30,31];
+			if(month===1){
+				return day;
+			}else if(month===2){
+				return months[0]+day;
+			}else{
+				var days=0;
+				for(var i=0;i<month-1;i++){
+					days+=months[i];
+				}
+				days+=day;
+				if((year%4===0&&year%100!==0)||(year%400===0)){
+					days++;	
+				}
+				return days;
+			}
+
+		}
+
+		var date=getDate(2003,12,31);
+		console.log(date);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

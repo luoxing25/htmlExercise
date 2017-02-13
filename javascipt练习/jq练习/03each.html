@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src= "../js/jquery.min.js"></script>
+</head>
+<body>
+	<div>aaa</div>
+	<div>bbb</div>
+	<div>ccc</div>
+	<input type="button" value = "点击">
+	<script type="text/javascript">
+		$("input").click(function (){
+			$("div").each(function (n,obj){
+				$(obj).html("这是第"+n+"个div");
+			});
+		});
+	</script>
+</body>
+</html>

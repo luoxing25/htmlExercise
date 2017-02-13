@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		body{
+			background: #ccc;
+		}
+		#main {
+			width:100px;
+			margin:10px auto;
+			border:3px solid #EADFDF;
+			background: white;
+		}
+		#div-ul{
+			position:relative;
+			overflow: hidden;
+		}
+		ul{
+			height:315px;
+			list-style:none;
+			padding:0;
+			/*border:3px solid #EADFDF;*/
+			
+			margin:0;
+			
+			position:relative;
+		}
+		img{
+			display: block;
+			padding-bottom :5px;
+		}
+		#upBtn,#downBtn{
+			margin:5px auto;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			var upBtn =document.getElementById("upBtn");
+			var downBtn =document.getElementById("downBtn");
+			var oUl = document.getElementById("oUl");
+			var lis = oUl.getElementsByTagName("li");
+			var timer = null;
+			oUl.innerHTML+=oUl.innerHTML;
+			var speed = -3;
+			upBtn.onclick=function(){
+				clearInterval(timer);
+			
+				timer = setInterval( function(){
+					if(oUl.offsetTop==-lis.length*lis[0].offsetHeight/2){
+						oUl.style.top=0+"px";
+					}
+					
+					oUl.style.top=oUl.offsetTop+speed+"px";
+
+				},30);
+			};
+			downBtn.onclick=function(){
+				clearInterval(timer);
+			
+				timer = setInterval( function(){
+					if(oUl.offsetTop>0){
+						oUl.style.top=-lis.length*lis[0].offsetHeight/2+"px";
+					}
+					
+					oUl.style.top=oUl.offsetTop+(-speed)+"px";
+
+				},30);
+			};
+			oUl.onmouseover=function(){
+				clearInterval(timer);
+			};
+			
+		};
+	</script>
+</head>
+<body>
+	<div id = "main">
+		<img id  = "upBtn" src="images-slide/up.gif">
+		<div id ="div-ul">
+		<ul id = "oUl">
+			<li><img src="images-slide/1.jpg"></li>
+			<li><img src="images-slide/2.jpg"></li>
+			<li><img src="images-slide/3.jpg"></li>
+			<li><img src="images-slide/4.jpg"></li>
+		</ul>
+		</div>
+		<img id = "downBtn" src="images-slide/down.gif">
+	</div>
+</body>
+</html>

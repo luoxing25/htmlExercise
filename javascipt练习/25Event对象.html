@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function fn(e){
+			var obj=e.target.value;
+			var p=document.getElementById("p1");
+			p.innerHTML=obj;
+
+		}
+	</script>
+</head>
+<body>
+	<input  type="button" value ="按钮1" onclick="fn(event)">
+	<input  type="button" value ="按钮2" onclick="fn(event)">
+	<input  type="button" value ="按钮3" onclick="fn(event)">
+	<input  type="button" value ="按钮4" onclick="fn(event)">
+	<input  type="button" value ="按钮5" onclick="fn(event)">
+	<input  type="button" value ="按钮6" onclick="fn(event)">
+	<p id ="p1">
+		<strong>显示区域</strong>
+
+	</p>
+</body>
+</html>

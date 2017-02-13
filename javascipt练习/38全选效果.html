@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	window.onload = function(){
+		var btn = document.getElementById("allSelect");
+		var oinput = document.getElementsByTagName("input");
+		var sign = true;
+		btn.onclick=function(){
+			if(sign){
+				for(var i =0;i<oinput.length;i++){
+					oinput[i].checked = true;
+					sign = false;
+				}
+			}else{
+				for(var i =0;i<oinput.length;i++){
+					oinput[i].checked = false;
+					sign = true;
+				}
+			}
+		}
+	}
+	</script>
+</head>
+<body>
+	<input type = 'checkbox' id = "allSelect">
+	<p id = "btn" style = "display:inline-block;">全选</p><br>
+	<input type="checkbox"><br/>
+	<input type="checkbox"><br/>
+	<input type="checkbox"><br/>
+	<input type="checkbox"><br/>
+	<input type="checkbox"><br/>
+	<input type="checkbox"><br/>
+	<input type="checkbox"><br/>
+</body>
+</html>

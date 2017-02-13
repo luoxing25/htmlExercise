@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function outer(){
+			var array= new Array();
+			for(var i = 0;i<5;i++){
+				array[i] = (function(index){
+					return i;
+				})(i);
+			}
+			return array;
+		}
+		var a =outer();
+		console.log(a);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width:200px;
+			height:200px;
+			background: #ccc;
+			display:none;
+		}
+		.yellow{
+			background:yellow;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			var buttons = document.getElementsByTagName("button");
+			var divs = document.getElementsByTagName("div");
+			for(var i =0;i<buttons.length;i++){
+				buttons[i].index = i;
+				buttons[i].onclick = function(){
+					for(i=0;i<buttons.length;i++){
+						buttons[i].className="";
+						divs[i].style.display="none";
+					}
+					this.className= "yellow";
+					divs[this.index].style.display = "block";
+				};
+			}
+		};
+	</script>
+</head>
+<body>
+	<button class = "yellow">1</button>
+	<button>2</button>
+	<button>3</button>
+	<div style = "display:block">111</div>
+	<div>222</div>
+	<div>333</div>
+</body>
+</html>

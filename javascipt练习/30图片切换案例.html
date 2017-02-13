@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<script type="text/javascript">
+		window.onload=init;
+		var i=1;
+		var dsq;
+		var li;
+		function init(){
+			dsq=window.setInterval("fn()",1000);
+		}
+		//定时器执行函数
+		function fn(){
+			i++;
+			if(i>4){
+				i=1;
+			}
+			var img = document.getElementById("img");
+			li = document.getElementById("li"+i);
+			//设置li标签样式
+			var li1;
+			if(i==1){
+				li1=document.getElementById("li4");
+				li1.style.background="#ccc";
+			}else{
+				li1=document.getElementById("li"+(i-1));
+				li1.style.background="#ccc";
+			}
+			//更改图片SRC
+			img.src="image_scoll/bg0"+i+".jpg";
+			
+			li.style.background="yellow";
+			
+		}
+		//停止定时器
+		function stop(){
+			window.clearInterval(dsq);
+		}
+		//重启定时器
+		function start(){
+			dsq=window.setInterval("fn()",1000);
+		}
+		//当鼠标在li标签时，显示相应的图片
+		function tingTu(n){
+			i=n;
+			var img = document.getElementById("img");
+			img.src="image_scoll/bg0"+n+".jpg";
+			window.clearInterval(dsq);
+			li.style.background="#ccc";
+			li = document.getElementById("li"+n);
+			li.style.background="yellow";
+			
+
+		}
+		function dongTu(){
+			dsq=window.setInterval("fn()",1000);
+		}
+	</script>
+</head>
+<body>
+	<div id = "main">
+		<h2>滚动定时切换图片</h2>
+		<div id="div-image">
+			<img  id = "img" src="image_scoll/bg01.jpg" onmouseover="stop()" onmouseout = "start()">
+		</div>
+		<ul>
+			<li id = "li1" onmouseover="tingTu(1)" onmouseout="dongTu()">1</li>
+			<li id = "li2" onmouseover="tingTu(2)" onmouseout="dongTu()">2</li>
+			<li id = "li3" onmouseover="tingTu(3)" onmouseout="dongTu()">3</li>
+			<li id = "li4" onmouseover="tingTu(4)" onmouseout="dongTu()">4</li>
+		</ul>
+
+
+	</div>
+	
+</body>
+</html>

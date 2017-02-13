@@ -1,0 +1,38 @@
+body,h2,ul,li,p,img{
+	margin: 0;
+	padding:0;
+}
+ul
+{
+	list-style:none;
+	float: right;
+	margin-top: 10px;
+}
+li{
+	width:12px;
+	margin-bottom: 20px;
+	border:1px solid black;
+	text-align: center;
+	
+}
+#li1{
+	background: yellow;
+}
+#main{
+	width:420px;
+	height:320px;
+	background: #ccc;
+	margin:0px auto;
+}
+h2{
+	padding:10px 10px;
+	border:2px solid red;
+	text-align: center;
+}
+#div-image{
+	width:400px;
+	height: 237px;
+	border:1px solid yellow;
+	margin-top:10px;
+	float:left;
+}

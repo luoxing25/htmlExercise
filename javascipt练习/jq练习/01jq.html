@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#d1{
+			width:300px;
+			height: 200px;
+			background: red;
+			
+		}
+	</style>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+</head>
+<body>
+<div id="d1"></div>
+	<div>
+		<a href="">
+			第一个div下的a标签
+		</a>
+		<p>	
+			<span>第一个div下的P标签内的P标签</span>
+			<a href="">第一个div下的P标签内的a标签</a>
+		</p>
+	</div>
+	<p>P标签</p>
+	<a href="#">链接</a>
+	<input type="button" id="btn" value ="点击">
+	<script type="text/javascript">
+		$("#btn").mouseover(function (){
+
+			// alert(123);
+			// $("div,p,a").css({color:"red",background:"yellow",fontSize:"50px"});
+			// $("#btn").css({background:"red"});
+			// $("div>a").css({background:"red"});
+			$("#d1").hide(1000);
+		});
+		$("#btn").mouseout(function (){
+
+			// alert(123);
+			// $("div,p,a").css({color:"red",background:"yellow",fontSize:"50px"});
+			// $("#btn").css({background:"red"});
+			// $("div>a").css({background:"red"});
+			$("#d1").show(1000);
+		});
+		
+	</script>
+</body>
+</html>

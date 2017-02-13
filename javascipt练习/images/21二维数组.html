@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var array=[[3,4,5,6],[7,8,9,10],[11,12,13,14]];
+		console.log(array);
+		function getMax(array){
+			var max=array[0][0];
+			for(var i=0;i<array.length;i++){
+				for(var j=0;j<array[i].length;j++){
+					if(array[i][j]>max){
+						max=array[i][j];
+					}
+				}
+
+			}
+			return max;
+		}
+		var max=getMax(array);
+		document.write(max);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		
+		var Fn = function (name){
+			this.name  = name ;
+		};
+		Fn.prototype.sayHello=function (){
+			alert(this.name+"sey hello");
+		};
+		var f1 = new Fn("joy");
+		var f2 = new Fn("tom");
+		f1.sayHello();
+		f2.sayHello();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

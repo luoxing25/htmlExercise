@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	//函数提升
+		console.log(f1(5,5));
+		function f1(a,b){
+			return a+b;
+		}
+
+	// 变量提升
+		console.log(f2(5,5));
+		var f2 = function(a,b){
+			return a+b;
+		};
+	// 匿名函数
+
+		var f3 = function(a,b){
+			return a+b;
+		};
+		console.log(f3(5,5));
+	</script>
+
+</head>
+<body>
+	
+</body>
+</html>

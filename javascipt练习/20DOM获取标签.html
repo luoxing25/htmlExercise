@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>
+		<a id ="link" href="http://www.baidu.com">百度一下</a>
+	</div>
+	<script type="text/javascript">
+		var link = document.getElementById("link");
+		link.href="http://www.sina.com.cn";
+		link.onclick=function(){
+			alert("点了一下");
+			// return false;
+		}
+		console.log(link.href);
+	</script>
+</body>
+</html>

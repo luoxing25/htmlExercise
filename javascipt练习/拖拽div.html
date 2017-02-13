@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{margin:0;padding:0;}
+		#div1{width:100px;height:100px;background: red;position:absolute;}
+	</style>
+	<script type="text/javascript">
+		function setCookie(name,value,iday){
+			var oDate = new Date();
+			oDate.setDate(oDate.getDate()+iday);
+			document.cookie =name+"="+value+";expires="+oDate;
+		}
+		function getCookie(name){
+			var arr = document.cookie.split("; ");
+			for(var i = 0; i<arr.length;i++){
+				var arr2 = arr[i].split("=");
+				if(arr2[0]==name){
+					return arr2[1];
+				}
+			}
+			return "";
+		}
+		function removeCookie(name){
+			setCookie(name,"1",-1);
+		}
+
+
+		window.onload = function(){
+
+			var oDiv = document.getElementById("div1");
+			var top=null;//鼠标到div内部的上面的距离；
+			var left=null;//鼠标到div内部的左面的距离；
+			var x = getCookie("x");
+			var y = getCookie("y");
+			if(x){
+					oDiv.style.left=x+'px';
+					oDiv.style.top=y+'px';
+			}
+			window.onresize =function(){
+				oDiv.style.top = 0+"px";
+				oDiv.style.left =0+"px";
+
+			};
+			oDiv.onmousedown = function(ev){
+				var oEvent = ev||event;
+				top = oEvent.clientY-oDiv.offsetTop;
+				left = oEvent.clientX-oDiv.offsetLeft;
+
+				document.onmousemove = function(ev){
+					var oEvent = ev||event;
+					var l = oEvent.clientX-left;
+					var t = oEvent.clientY-top;
+					if(l<0){
+						l=0;
+					}else if(l>(document.documentElement.clientWidth-oDiv.offsetWidth)){
+						l=document.documentElement.clientWidth-oDiv.offsetWidth;
+					}
+					if(t<0){
+						t=0;
+					}else if(t>(document.documentElement.clientHeight-oDiv.offsetHeight)){
+						t=document.documentElement.clientHeight-oDiv.offsetHeight;
+					}
+					oDiv.style.left =l +"px";
+					oDiv.style.top = t+"px";
+				};
+				document.onmouseup = function(){
+					document.onmousemove=null;
+					document.onmouseup = null;
+					setCookie("x",oDiv.offsetLeft,5);
+					setCookie("y",oDiv.offsetTop,5);
+				};
+			};
+
+		};
+	</script>
+</head>
+<body>
+	<div id ="div1"></div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+body,h2,ul,li,p,img{
+	margin: 0;
+	padding:0;
+}
+body{
+	background: #ccc;
+}
+ul
+{
+	list-style:none;
+}
+html{
+	font-size: 12px;
+	font-style:normal;
+	font-weight:400px;
+}
+h2{
+	font-size:36px;
+	text-align: center;
+}
+div{
+	width:440px;
+	height: 100px;
+}
+#div-bottom{
+	width:400px;
+	height:270px;
+
+
+}
+.center{
+	margin: 10px auto;
+}
+.center li{
+	margin-right:10px;
+	float:left;
+}
+p{
+	margin-top:10px;
+}

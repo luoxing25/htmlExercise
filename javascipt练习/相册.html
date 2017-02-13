@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>相册</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+<h2>相册</h2>
+<div class="center">
+	<ul>
+		<li>
+			<a href="images/bg03.jpg" title="图片一">
+				<img src="images/bg03_small.jpg"></a>
+		</li>
+		<li>
+			<a href="images/bg06.jpg" title="图片二">
+				<img src="images/bg06_small.jpg"></a>
+		</li>
+		<li>
+			<a href="images/bg08.jpg" title="图片三">
+				<img src="images/bg08_small.jpg"></a>
+		</li>
+		<li>
+			<a href="images/bg10.jpg" title="图片四">
+				<img src="images/bg10_small.jpg"></a>
+		</li>
+	</ul>
+</div>
+<div id ="div-bottom" class="center">
+	<img  id ="imagehold" src="images/placehold.png">
+	<p id="s">请选择一张图片</p>
+</div>
+	
+<script type="text/javascript">
+	var links=document.getElementsByTagName("a");
+	for(var i=0;i<links.length;i++){
+		links[i].onclick=function(){
+			document.getElementById("imagehold").src=this.href;
+			document.getElementsByTagName("p")[0].innerText=this.title;
+			return false;
+		}
+		
+	}
+</script>	
+</body>
+</html>

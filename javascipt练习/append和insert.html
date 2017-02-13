@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	window.onload = function(){
+		var oText = document.getElementById("text");
+		var oBtn = document.getElementById("btn");
+		var oUl = document.getElementById("ul");
+		var lis = oUl.getElementsByTagName("li");
+		oBtn.onclick=function(){
+			var oLi = document.createElement("li");
+			oLi.innerHTML = oText.value;
+			/*oUl.appendChild(oLi);*/
+			oUl.insertBefore(oLi,lis[0]);
+
+		};
+	};
+	</script>
+</head>
+<body>
+	<input id = "text" type="text" name="">
+	<button id = "btn">添加</button>
+	<ul id = "ul">
+		<li>aaa</li>
+	</ul>
+</body>
+</html>

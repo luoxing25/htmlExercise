@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width:1000px;
+			height: 100px;
+			background:yellow;
+			border:5px solid blue;
+			font-size:70px;
+			text-align:center;
+			margin:0 auto;
+			line-height:100px;
+		}
+		input{
+			display: block;
+			margin:20px auto;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=init;
+		var interval;
+		function init(){
+			fn();
+			interval =window.setInterval("fn()",1000);
+		}
+		function fn(){
+			var date=new Date();
+			var div1 = document.getElementById("div1");
+			div1.innerHTML=date.toLocaleString();
+
+		}
+		function fn2(){
+			window,clearInterval(interval);
+		}
+	</script>
+</head>
+<body>
+	<div id = "div1">
+		时间
+	</div>
+	<input type="button" value="清除定时器" onclick="fn2()">
+	
+</body>
+</html>

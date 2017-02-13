@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var array=[45,78,2,56,15,98,3,4];
+		// 数组自带sort()函数
+		// array=array.sort(function sort1(a,b){
+		// 	return b-a;
+		// });
+
+		// 手写冒泡排序
+
+		for(var i=0;i<array.length-1;i++){
+			var sign=true;
+			for(var j=0;j<array.length-1-i;j++){
+				if(array[j]>array[j+1]){
+					var tmp=array[j];
+					array[j]=array[j+1];
+					array[j+1]=tmp;
+					sign=false;
+				}
+			}
+			if(sign){
+				break;
+			}
+		}
+		console.log(array);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

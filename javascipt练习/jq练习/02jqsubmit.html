@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		body,div,p,h1,dt,dd{
+			padding:0;
+			margin:0;
+		}
+		dt,dd{
+			display: inline-block;
+
+		}
+		dt{
+			width:120px;
+			text-align: right;
+		}
+		#main{
+			width:600px;
+			height:500px;
+			margin:0 auto;
+		}
+		h1{
+			font-size: 24px;
+			font-weight:normal;
+		}
+		p{
+			font-size:12px;
+			color:red;
+		}
+		span{
+			font-size:12px;
+			
+		}
+		.gray{
+			color:gray;
+		}
+		.red{
+			color:red;
+			background: yellow;
+		}
+		.green{
+			color:green;
+		}
+		
+		#describe{
+			border-bottom:1px dashed #ccc;
+			padding:10px;
+		}
+	</style>
+	<script type="text/javascript" src="../js/jquery.min.js"></script> 
+	<script type="text/javascript">
+		function submitForm(){
+			var email = document.getElementById("email");
+			 if(!blurEmail()){
+			 	return false;
+			 }
+		}
+		function focusEmail(){
+			var emailMsg = document.getElementById("emailMsg");
+			var email = document.getElementById("email");
+			email.style.background="green";
+			email.style.color="white";
+			emailMsg.className = "gray";
+			emailMsg.innerHTML="这是注册邮箱，请保管好";
+
+		}
+		function blurEmail(){
+			var email = document.getElementById("email");
+			email.style.background="white";
+			email.style.color="black";
+			if(email.value==""){
+				var emailMsg = document.getElementById("emailMsg");
+				emailMsg.innerHTML="邮箱地址不能为空！"
+				emailMsg.className = "red";
+				return false;
+			} 
+			else if(email.value.indexOf("@")==-1){
+				emailMsg = document.getElementById("emailMsg");
+				emailMsg.innerHTML="邮箱格式不正确！"
+				emailMsg.className = "red";
+				return false;
+			}else{
+				emailMsg = document.getElementById("emailMsg");
+				emailMsg.innerHTML="√";
+				emailMsg.className = "green";
+				return true;
+			}
+		}
+		$(function(){
+			var province = $("#province");
+			for(var i = 1; i<=10;i++){
+				province.append("<option value='"+i+"'>"+i+"省</option>");
+				
+			}		
+		});
+		function show_city(){
+			$("#city").empty();
+			$("#city").append("<option value = '0' > 请选择城市</option>");
+			$("#area").empty();
+			$("#area").append("<option value = '0' > 请选择地区</option>");
+			var city = $("#city");
+			for(var i = 1; i<=15;i++){
+				city.append("<option value='"+i+"'>"+i+"城</option>");
+				
+			}
+		}
+		function show_area(){
+			$("#area").empty();
+			$("#area").append("<option value = '0' > 请选择地区</option>");
+			var area = $("#area");
+			for(var i = 1; i<=20;i++){
+				area.append("<option value='"+i+"'>"+i+"地区</option>");
+				
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id = "main">
+		<div id = "describe">
+			<h1>HI,欢迎注册当当网！尽享多重优惠服务。</h1>
+			<p>你所提供的资料不会做其他用途，敬请安心填写。</p>
+		</div>
+		
+		<form id = "form" action = "register.php" onsubmit="return submitForm()">
+			<dl>
+				<dt>Email地址:</dt>	
+					<dd>
+						<input type="text" id = "email" onfocus="focusEmail()" onblur="blurEmail()">
+						<span id = "emailMsg" class= "gray"></span>
+					</dd>
+			</dl>	
+					<!-- <div id ="form-d1"></div>
+					<div id = "form-d2"></div> -->
+				
+				<dl>
+					<dt>设置昵称:</dt>
+					<dd><input type="text" name=""></dd>
+				</dl>
+				<dl>
+					<dt>设定密码:</dt>
+					<dd><input type="password" name=""></dd>
+				</dl>
+				<dl>
+					<dt>在输入一次密码:</dt>
+					<dd><input type="password" name=""></dd>
+				</dl>
+				<dl>
+					<dt>性别:</dt>
+					<dd><label><input type="radio" id="man" name="sex">男</label></dd>
+					<dd><label><input type="radio" name="sex">女</label></dd>
+				</dl>
+				<dl >
+					<dt>所在地区:</dt>
+					<dd>
+						<select id = "province" onchange="show_city()">
+							<option value = "0" selected="selected"> 请选择省份</option>&nbsp;&nbsp;
+						</select>
+					
+						<select id = "city" onchange="show_area()">
+							<option value = "0" selected="selected"> 请选择城市</option>&nbsp;&nbsp;
+						</select>
+
+						<select id = "area">
+							<option value = "0" selected="selected"> 请选择地区</option>&nbsp;&nbsp;
+						</select>
+					</dd>
+				</dl>
+
+				<dl>
+					<dt><input type="submit" value = "提交注册"></dt>
+				</dl>
+			
+		</form>
+	</div>
+	
+</body>
+</html>
