@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap3/css/bootstrap.min.css">
+	<script type="text/javascript" src = "jquery.min.js"></script>
+	<script type="text/javascript" src = "bootstrap3/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		.container{
+			width: 400px;
+			background: #e6e6e6;
+			margin: 10px auto;
+		}
+	</style>
+</head>
+<body>
+<div class= "container">
+	<form>		
+			<div class = "form-group">
+				<span class= "glyphicon glyphicon-user"></span>
+				<label for = "name">昵称:</label>
+				<input type="text" name="name" id = "name" class = "form-control">
+			</div>
+			<div class = "form-group">
+			<span class ="glyphicon glyphicon-envelope"></span>
+				<label for = "cemail">email:</label>
+				<input type="email" name="cemail" id = "name" class = "form-control">
+			</div>
+			<div class = "form-group">
+			<span class="glyphicon glyphicon-eye-close"></span>
+				<label for = "pwd">密码:</label>
+				<input type="password" name="pwd" id = "pwd" class = "form-control">
+			</div>
+			<div class = "form-group">
+				<label class = " checkbox-inline disabled "><input type="checkbox" name="" disabled="">旅游</label>
+				<label class = " checkbox-inline"><input type="checkbox" name="">看书</label>
+				<label class = " checkbox-inline"><input type="checkbox" name="">游泳</label>
+				<label class = " checkbox-inline"><input type="checkbox" name="">敲代码</label>
+			</div>
+			<div class = "form-group">
+				<label class= "radio-inline disabled"><input type="radio" name="sex" disabled="" checked>女</label>
+				<label class= "radio-inline"><input type="radio" name="sex">男</label>
+			</div>
+			<div class = "form-group">
+			   <div class = "input-group">
+				<span class = "input-group-addon">个人简介</span>
+				<input type="text" name="" class = "form-control">
+			   </div>
+			</div>
+			<div class = "form-group">
+			   <div class = "input-group">
+				<input type="search" name="sc" class = "form-control">
+				<div class = "input-group-addon"><span class = "glyphicon glyphicon-search"></span></div>
+			   </div>
+			  <div class = "text-center">
+			  	<input type="reset" name="reset" value = "重置" class = "btn btn-danger ">
+			  	<input type="submit" value = "提交" class = "btn btn-success">
+			  </div>
+			</div>
+			
+		</div>
+	</form>
+
+</div>
+</html>

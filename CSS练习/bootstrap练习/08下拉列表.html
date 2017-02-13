@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1 user-scale=no">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap3/css/bootstrap.min.css">
+	<script type="text/javascript" src = "jquery.min.js"></script>
+	<script type="text/javascript" src = "bootstrap3/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		.navbar-nav li{
+			
+			background: black;
+			margin-left: 10px;
+		}
+		 #navUl li a{
+			color:#fff;
+		}
+	
+	</style>
+	
+</head>
+<body>
+<!-- 导航制作 -->
+	<nav class = "navbar navbar-default navbar-fixed-top navbar-inverse text-muted">
+		<div class = "container">
+			<div class = "navbar-header">
+				<img src="../../images/heimalogo.png" height="50px" >
+			</div>
+			<div class = "collapse navbar-collapse">
+				<ul class="nav navbar-nav" id = "navUl">
+					<li id="li1" onmouseover = "fn(this)" onmouseout = "fn2(this)"><a href="#">免费学习资源</a></li>
+					<li onmouseover = "fn(this)" onmouseout = "fn2(this)"><a href="#">课程中心</a></li>
+					<li onmouseover = "fn(this)" onmouseout = "fn2(this)"><a href="#">学科指南</a></li>
+					<li onmouseover = "fn(this)" onmouseout = "fn2(this)"><a href="#">学员故事</a></li>
+					<li onmouseover = "fn(this)" onmouseout = "fn2(this)"><a href="#">传智社区</a></li>
+					<li onmouseover = "fn(this)" onmouseout = "fn2(this)"><a href="#">在线课堂</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- 导航结束 -->
+	<script type="text/javascript">
+		function fn(obj){
+			$(obj).css({"background":"white","font-size":"14px"});
+			$(obj).find("a").css({"color":"black"});
+		}
+		function fn2(obj){
+			$(obj).css({"background":"black","font-size":"14px"});
+			$(obj).find("a").css({"color":"white"});
+		}	
+	</script>
+	<div class= "container">
+
+		<h1 class= "page-header">下拉列表</h1>
+		<div class="dropdown ">
+			<button class="btn btn-info" data-toggle="dropdown">
+				登 录<span class="caret"></span>
+			</button>
+			<ul class= "dropdown-menu">
+				<li><a href="#">QQ登录</a></li>
+				<li><a href="#">微信登录</a></li>
+				<li class= "divider"></li>
+				<li><a href="#">微博登录</a></li>
+				<li><a href="#">支付宝登录</a></li>
+			</ul>
+		</div>
+		<h1 class =  "page-header">普通标签页</h1>
+		<ul class="nav nav-tabs">
+			<li class  = "active"><a href="#">页面一</a></li>
+			<li><a href="#">页面二</a></li>
+			<li><a href="#">页面三</a></li>
+		</ul>
+		<h1 class =  "page-header">胶囊标签页</h1>
+		<ul class="nav nav-pills">
+			<li class  = "active"><a href="#">页面一</a></li>
+			<li><a href="#">页面二</a></li>
+			<li><a href="#">页面三</a></li>
+		</ul>
+		<h1 class =  "page-header">纵向胶囊标签页</h1>
+		<ul class="nav nav-pills nav-stacked">
+			<li class  = "active"><a href="#">页面一</a></li>
+			<li><a href="#">页面二</a></li>
+			<li><a href="#">页面三</a></li>
+		</ul>
+		<p class = "text-muted">这是一直可爱的小马，性别男，爱好女，特长：奔跑，家乡：大草原，喜欢他可以了解详细情况</p>
+		<p class = "text-muted">这是一直可爱的小马，性别男，爱好女，特长：奔跑，家乡：大草原，喜欢他可以了解详细情况</p>
+		<p class = "text-muted">这是一直可爱的小马，性别男，爱好女，特长：奔跑，家乡：大草原，喜欢他可以了解详细情况</p>
+		<p class = "text-muted">这是一直可爱的小马，性别男，爱好女，特长：奔跑，家乡：大草原，喜欢他可以了解详细情况</p>
+		<p class = "text-muted">这是一直可爱的小马，性别男，爱好女，特长：奔跑，家乡：大草原，喜欢他可以了解详细情况</p>
+		<p class = "text-muted">这是一直可爱的小马，性别男，爱好女，特长：奔跑，家乡：大草原，喜欢他可以了解详细情况</p>
+		<p class = "text-muted">这是一直可爱的小马，性别男，爱好女，特长：奔跑，家乡：大草原，喜欢他可以了解详细情况</p>
+		<p class = "text-muted">这是一直可爱的小马，性别男，爱好女，特长：奔跑，家乡：大草原，喜欢他可以了解详细情况</p>
+		<p class = "text-muted">这是一直可爱的小马，性别男，爱好女，特长：奔跑，家乡：大草原，喜欢他可以了解详细情况</p>
+		<h3 class="page-header">分页</h3>
+		<div>
+			<ul class="pagination">
+				<li><a href="#">&laquo;</a></li>
+				<li class ="active"><a href="#">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">4</a></li>
+				<li><a href="#">5</a></li>
+				<li><a href="#">6</a></li>
+				<li><a href="#">7</a></li>
+				<li><a href="#">&raquo;</a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS画大树</title>
+		<style>
+			* {
+				padding:0;
+				margin:0;
+			}
+			
+			.main {
+					width: 500px;
+					height: 600px;
+					margin:0 auto;
+					background: yellow;
+					position: relative;
+			}
+			
+			.one {
+				width: 0px;
+				height: 0px;
+				/*background: #ccc;*/
+				margin: 0 auto;
+				border:50px solid transparent;
+				border-top: none;
+				border-bottom-color: green;
+				position: absolute;
+				top:0px;
+				left:200px;
+			}
+			.two {
+				width: 0px;
+				height: 0px;
+				/*background: #ccc;*/
+				border: 70px solid transparent;
+				margin: 0 auto;
+				border-top:0 none;
+				border-bottom-color: green;
+				position: absolute;
+				top:40px;
+				left:180px;
+			}
+			.three {
+				width: 0px;
+				height: 0px;
+				/*background: #ccc;*/
+				border: 100px solid transparent;
+				margin: 0 auto;
+				border-top:0 none;
+				border-bottom-color: green;
+				position: absolute;
+				top:90px;
+				left:150px;
+			}
+			.four {
+				width: 20px;
+				height: 100px;
+				border:0 none;
+				margin: 0 auto;
+				background: #DEB887;
+				position: absolute;
+				top:190px;
+				left:240px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			<div class="one"></div>
+			<div class="two"></div>
+			<div class="three"></div>
+			<div class="four"></div>
+		</div>
+	</body>
+</html>
