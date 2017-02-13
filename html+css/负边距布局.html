@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{width:100px;height:100px;background:#ccc;border:1px solid red;}
+		
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oDivs = document.getElementsByTagName("div");
+			
+			for(var i = 0; i < oDivs.length; i++){
+				
+				oDivs[i].index = i;
+				
+				oDivs[i].onmouseover=function(){
+					
+					for(var j = this.index+1;j<oDivs.length;j++){
+
+						oDivs[j].style.marginLeft=parseFloat(oDivs[j].style.marginLeft)+50+"px";
+					}
+				};
+				oDivs[i].onmouseout=function(){
+					
+					for(var j = this.index+1;j<oDivs.length;j++){
+
+						oDivs[j].style.marginLeft=parseFloat(oDivs[j].style.marginLeft)-50+"px";
+					}
+				};
+			}
+		};
+		
+	</script>
+</head>
+<body>
+
+	<div id = "div1" style = "margin-left:0px"></div>
+	<div id = "div2" style = "margin-left:50px ; margin-top:-102px"></div>
+	<div id = "div3" style = "margin-left:100px ; margin-top:-102px"></div>
+	<div id = "div3" style = "margin-left:150px ; margin-top:-102px"></div>
+	<div id = "div3" style = "margin-left:200px ; margin-top:-102px"></div>
+	<div id = "div3" style = "margin-left:250px ; margin-top:-102px"></div>
+	<div id = "div3" style = "margin-left:300px ; margin-top:-102px"></div>
+	
+</body>
+</html>
