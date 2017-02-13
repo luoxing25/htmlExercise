@@ -1,0 +1,135 @@
+@charset "UTF-8";
+.header {
+	height: 26px;
+	background: #f7f7f7;
+	border-bottom: 1px solid #d8d8d8;
+}
+.top{
+	width: 970px;
+	height: 26px;
+	margin: 0 auto;
+}
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
+.top_l{
+	width: 132px;
+	height: 26px;
+	line-height: 26px;
+}
+.top_r{
+	width: 428px;
+	height: 26px;
+	line-height: 26px;
+}
+.top_r  li{
+	height: 26px;
+	float:left;
+	padding-right: 10px;
+	line-height: 26px;
+
+}
+.top_r ul li s{
+	width: 14px;
+	height: 12px;
+	display: inline-block;
+	background-image:url(../image/sprite.png);
+	vertical-align: middle;
+}
+/*E= 顶部结束*/
+.logo{
+
+	width: 970px;
+	height: 98px;
+	margin: 0 auto;
+}
+.logo_l{
+	width: 201px;
+	height: 55px;
+	margin: 24px 0 19px 9px;
+	background: url(../image/sprite.png) -20px 0;
+	text-indent: -9999px;
+}
+.logo_r{
+	height: 42px;
+	margin-top:29px; 
+	border: 1px solid #c9c9c9;
+
+}
+.logo_r_search input{
+	width: 418px;
+	height: 28px;
+	line-height: 28px;
+	color:#c9c9c9;
+	display: inline-block;
+	margin: 5px 0 7px 4px;
+}
+.logo_r_search input:focus{
+	color:#000;
+	
+}
+.logo_r_btn input{
+	width: 102px;
+	height: 32px;
+	background: #2f70d0;
+	color: #fff;
+	display: inline-block;
+	line-height: 32px;
+	margin: 5px 5px 7px 0;
+	border:0 none;
+}
+/*导航开始*/
+.nav{
+	width: 970px;
+	height: 26px;
+	margin: 0 auto;
+	border-bottom: 2px solid #2f70d0;
+}
+.nav li{
+	
+	height: 26px;
+	padding: 0 15px;
+	line-height: 26px;
+	font-size: 14px;
+	font-weight: 700;
+	float: left;
+}
+.nav li a{
+	color: #2f70d0;
+}
+.nav li:hover {
+	background: #2f70d0;
+}
+.nav li:hover a{
+	color: #fff;
+
+}
+/*导航结束*/
+/*banner*/
+.banner{
+	width: 970px;
+	height: 210px;
+	background-color: pink;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+.subNav{
+	width:200px;
+	height:210px;
+	background-color:red; 
+	margin-right:11px;
+}
+.ad{
+
+	width: 520px;
+	height: 210px;
+	background-color: yellow;
+}
+.massage{
+	width: 230px;
+	height: 210px;
+	background-color: green;
+}
