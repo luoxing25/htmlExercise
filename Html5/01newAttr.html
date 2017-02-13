@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h2>可编辑列表</h2>
+	<ul contenteditable = "" tabindex="-1">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+	<hr>
+	<h2>隐藏列表</h2>
+	<ul >
+		<li hidden="">1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+	<hr>
+	<h2>TAB键切换控件</h2>
+	<a href="#" tabindex="3">hello1</a>
+	<a href="#" tabindex ="1">hello2</a>
+	<a href="#" tabindex="2">hello3</a>
+	<div tabindex="4" contenteditable="" style="width:200px;height:100px;background:yellow">hello</div>
+	<hr>
+	<h2>自动检测拼写</h2>
+	<input type="text" spellcheck="">
+</body>
+</html>
+<!-- 
+	html5新增属性：
+	contenteditable(是否可编辑)
+	hidden(是否隐藏)
+	tabindex(按tab键可以按index值在控件之间切换)
+	designMode()
+	spellcheck(自动检测拼写)
+ -->
