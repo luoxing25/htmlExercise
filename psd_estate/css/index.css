@@ -1,0 +1,151 @@
+
+
+.index-second-hand-house{
+    height:500px;
+
+}
+.index-guide{
+    height:500px;
+    /*background-color: chocolate;*/
+}
+.index-partner{
+    height:500px;
+    background-color: palegreen;
+}
+/*底部完*/
+/*精品推荐开始*/
+.index-Boutique h2{
+    height:114px;
+    line-height: 114px;
+    color:#6b6b6b;
+    text-align:center;
+    font-family:"Microsoft YaHei";
+}
+.index-Boutique ul{
+    overflow: hidden;
+}
+.boutique-info{
+    position: relative;
+    float:left;
+    width:253px;
+    height:342px;
+    overflow: hidden;
+    margin-right: 10px;
+    background-color: #eae9e9;
+
+}
+.boutique-info img{
+    height: 263px;
+}
+.boutique-info-div{
+    display: block;
+    position: absolute;
+    width:119px;
+    height:52px;
+    font-size:18px;
+    padding-left:16px;
+    top:236px;
+    left:0;
+    line-height: 52px;
+    color:#fff;
+}
+.boutique-info .boutique-stars img{
+    width:16px;
+    height:16px;
+}
+.boutique-info .boutique-stars{
+    margin-top:6px;
+    float:right;
+}
+.boutique-info .boutique-stars li{
+    float:left;
+    margin-right: 6px;
+}
+.boutique-info .boutique-p{
+    clear: both;
+    font-size:14px;
+    margin-top:36px;
+}
+.boutique-info .boutique-p span.span-bold{
+    font-weight: bold;
+    color:#000;
+}
+.boutique-info .boutique-p span{
+  color:  #6e6d6d;
+}
+.index-Boutique ul li.boutique-info:last-child{
+    margin-right: 0;
+}
+
+.boutique-info-div-blue{
+    background-color: #007a87;
+}
+.boutique-info-div-red{
+    background-color: #e04556;
+}
+.boutique-info-div-yellow{
+    background-color: #f8ab48;
+}
+.boutique-info-div-pink{
+    background-color: #861760;
+}
+/*精品推荐完*/
+
+/*最新推荐开始*/
+.index-newest h2{
+    height:114px;
+    line-height: 114px;
+    color:#6b6b6b;
+    text-align:center;
+    font-family:"Microsoft YaHei";
+}
+.newest-info{
+    position: relative;
+    float:left;
+    width:253px;
+    height:342px;
+    overflow: hidden;
+    margin-right: 10px;
+    background-color: #eae9e9;
+}
+.newest-info img{
+    height:342px;
+}
+.index-newest li:last-child{
+    margin-right:0;
+}
+.index-newest{
+    overflow: hidden;
+}
+/*最新推荐完*/
+
+/*二手房开始*/
+.index-secondHandHouse{
+    border-top:6px solid #f39801;
+    margin-top: 54px;
+}
+.index-secondHandHouse .container{
+    position: relative;
+}
+.index-secondHandHouse h2{
+    position: absolute;
+    left:464px;
+    top:-27px;
+    background-color: #fff;
+    color:#6b6b6b;
+    padding:0 8px;
+    font-family:"Microsoft YaHei";
+}
+.index-secondHandHouse ul{
+    padding-top:54px;
+    margin-left:140px;
+    overflow: hidden;
+}
+.index-secondHandHouse ul li{
+    float:left;
+    margin-right:104px;
+}
+.index-secondHandHouse ul img{
+    width:174px;
+    height:174px;
+}

@@ -1,0 +1,19 @@
+body,div,img,a,p,ul,li,h1,h2,h3,h4,hr,input,form,button{
+    margin:0;
+    padding:0;
+}
+h2{
+    font-size:34px;
+    font-weight:400 ;
+}
+span{
+    font-family: "Microsoft YaHei";
+}
+ul,li{
+    list-style: none;
+}
+a{
+    text-decoration:none;
+    display: block;
+    color:#fff;
+}

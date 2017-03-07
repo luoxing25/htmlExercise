@@ -1,0 +1,175 @@
+.header{
+    position: relative;
+    height:600px;
+    background-color: aquamarine;
+    background: url("../images/dome1.jpg") no-repeat;
+}
+.container{
+    position:relative;
+    width:1045px;
+    margin:0 auto;
+}
+.header-logo{
+    width:177px;
+    height:123px;
+    background-color: #f39801;
+}
+.header-logo a{
+    line-height: 123px;
+    text-align: center;
+    font-size: 34px;
+    font-weight:bold;
+    font-family: "Microsoft YaHei";
+}
+.header-wrap{
+    position: absolute;
+    height:100px;
+    width:100%;
+    background-color: rgba(0,0,0,0.7);
+    left:0;
+    bottom:0;
+}
+.header-nav-bar{
+    width:274px;
+    height:70px;
+    margin-top:15px;
+    margin-left:23px;
+    border-right:1px solid #98998f;
+}
+.header-nav-bar .header-nav-item{
+    float:left;
+    margin-right:6px;
+    margin-bottom: 6px;
+    width:82px;
+    height:32px;
+    background-color: #f39801;
+}
+.header-nav-bar .item4{
+    width:114px;
+}
+.header-nav-bar .item5{
+    width:138px;
+}
+.header-nav-item a{
+    line-height: 32px;
+    text-align: center;
+    font-size: 16px;
+}
+.header-nav-search{
+    width:714px;
+    height:70px;
+    background-color: #d9d8d6;
+    margin-top:15px;
+    margin-right:14px;
+
+
+}
+.header-nav-search .search-text{
+    display: inline-block;
+    width:602px;
+    height:54px;
+    margin-top:8px;
+    margin-left:8px;
+    border:none;
+    font-size: 14px;
+    padding-left:6px;
+}
+.header-nav-search .search-btn{
+    display: inline-block;
+    width:90px;
+    height:54px;
+    background-color: #e93d4f;
+    border:none;
+    margin-top:8px;
+    color:#fff;
+    font-size:14px;
+}
+/*头部完*/
+.float-l{
+    float:left;
+}
+.float-r{
+    float:right;
+}
+/*底部*/
+.footer{
+    height:375px;
+    background-color: #2b2d2e;
+    color:#fff;
+    font-family: "Microsoft YaHei";
+}
+.footer .footer-QRcode .float-l ul li{
+    float:left;
+}
+.footer .footer-QRcode .float-l ul li span,.footer .footer-QRcode .float-l ul li p{
+    font-size:14px;
+}
+.footer .footer-QRcode .float-l ul li span{
+    display: inline-block;
+    height: 24px;
+    padding:4px;
+    background-color: #fff;
+    color:#000;
+    line-height: 24px;
+    margin-top: 6px;
+}
+.footer-QRcode{
+    padding-top:56px;
+    margin-left:22px;
+    zoom: 1;
+}
+.footer-QRcode:after{
+    content:".";
+    clear: both;
+    visibility: hidden;
+    height:0;
+    display:block;
+}
+.footer .footer-QRcode .qr-code{
+    width:120px;
+    height:120px;
+    background-color: #f39801;
+    text-align: center;
+    line-height: 120px;
+    color:#fff;
+    font-family: "Microsoft YaHei";
+    font-size: 21px;
+}
+.footer .float-l li{
+    margin-right:6px;
+}
+.footer li.float-l{
+    margin-right:100px;
+}
+.footer li.float-l:last-child{
+    margin-right: auto;
+}
+.font-size{
+    font-size: 16px;
+}
+.footer-about{
+
+    width:998px;
+    margin:0 auto;
+    margin-top:50px;
+    border-top:1px solid #7c7d7e;
+}
+.footer-about ul{
+    width:355px;
+    margin:0 auto;
+    margin-top:40px;
+    overflow: hidden;
+}
+.footer-about li{
+    text-align: center;
+    float:left;
+    width:88px;
+    border-right:1px solid #fff;
+}
+.footer-about li:last-child{
+    border-right:none;
+}
+.footer-about p{
+    text-align: center;
+    margin-top:25px;
+}
