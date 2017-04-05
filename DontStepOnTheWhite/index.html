@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>别踩白块儿</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #container{
+            width:400px;
+            height:660px;
+            border:1px solid #000;
+            margin:15px auto 0 auto;
+        }
+        #box{
+            position: relative;
+            width:100%;
+            height:600px;
+            border-bottom:1px solid #000;
+            overflow: hidden;
+        }
+        #box-start{
+            width:100%;
+            height:70px;
+            position:absolute;
+            top:0;
+            left:0;
+            border-bottom:1px solid #000;
+            background-color: #cccccc;
+            font:bold 50px "微软雅黑";
+            text-align: center;
+            z-index: 99;
+        }
+        .box-span{
+            cursor:pointer;
+        }
+        #main{
+            width:100%;
+            height:600px;
+            position: relative;
+            top:-150px;
+            /*border:1px solid red;*/
+
+        }
+        #counter{
+            width:100%;
+            height: 58px;
+            background-color: #cccccc;
+            font: 700 30px "微软雅黑";
+            text-align:center;
+            line-height:58px;
+        }
+        .row{
+            width:400px;
+            height:150px;
+        }
+        .row div{
+            width:99px;
+            height:149px;
+            border-bottom: 1px solid #000;
+            border-right: 1px solid #000;
+            float:left;
+            cursor:pointer;
+        }
+        #error{
+            position:absolute;
+            display: none;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="box">
+            <div id="box-start">
+                <span class="box-span">开 始</span>
+            </div>
+            <div id="main">
+
+            </div>
+            <div id="error">×</div>
+        </div>
+        <div id="counter">
+            准备!
+        </div>
+    </div>
+
+</body>
+<script>
+    //获取主要DOM
+    var oStart=document.getElementById("box-start");
+    var oMain=document.getElementById("main");
+    var oCounter=document.getElementById("counter");
+    var color="#000";
+    var timer=null;
+    var oError=document.getElementById("error");
+//    创建一行DIV
+    function createDiv(){
+        var oDiv=document.createElement("div");
+        var index=Math.floor(Math.random()*4);
+        oDiv.className="row";
+        for(var i=0;i<4;i++){
+            var iDiv=document.createElement("div");
+            //这个属性是为了当点击错的时候，判断是不是块，如果是块，给点错的块加上红色背景
+            iDiv.red="red";
+            if(index==i){
+                iDiv.style.backgroundColor=color;
+                //这个属性是为了之后判断是不是黑块的
+                iDiv.mark="i";
+            }
+            oDiv.appendChild(iDiv);
+        }
+        return oDiv;
+
+    }
+//实现功能的主要函数
+    function mainMove(){
+        clearInterval(timer);
+        var speed=5;//模拟速度
+        var num=0;//计数
+
+        //打开定时器
+        timer=setInterval(function(){
+
+            //往#main div中添加行块
+            if(oMain.childNodes.length==0){
+                oMain.appendChild(createDiv());
+                oMain.style.top=-150+"px";
+            }else if(oMain.offsetTop>=0){
+                //当top值大于等于0的时候说明第一个行块走完了，然后新建一个行块插入到前面
+                oMain.insertBefore(createDiv(),oMain.childNodes[0]);
+
+                oMain.style.top=-150+"px";
+            }
+            //每次让top值下移speed，模拟速度
+            oMain.style.top=oMain.offsetTop+speed+"px";
+//            console.log(oMain.style.top);
+
+            //当点击块的时候进行计数或者游戏结束
+            oMain.onclick=function (ev){
+
+                var event=ev||event;
+                event.stopPropagation();
+
+                    if(event.target.mark){//如果点击的是黑块
+                        //清除标记
+                        event.target.mark=null;
+                        //黑块变成灰色
+                        event.target.style.backgroundColor="#eee";
+                        //计数
+                        num++;
+                        oCounter.innerHTML="游戏结束 当前得分:"+" "+num;
+
+                    }else {//如果点击的不是黑块
+                        clearInterval(timer);
+                        oCounter.innerHTML = "游戏结束 最终得分:" + " " + num;
+                        oStart.style.display = "block";
+                        oStart.getElementsByTagName("span")[0].innerHTML = "再来一次";
+//                    console.log(event.target.red);
+//                    oError.style.display="block";
+//                    oError.style.top=event.clientY+"px";
+//                    oError.style.left=event.clientX-(document.body.clientWidth-402)/2-9+"px";
+//                    if(event.target.red){
+//                        event.target.style.backgroundColor="red";
+//                    }
+                        this.onclick = null;
+                    }
+
+
+
+
+                if(num%20==0){
+                    speed++;
+                }
+            };
+            oMain.ondblclick=function(event){
+                event.preventDefault();
+            }
+            //删除超过界面的块
+            if(oMain.childNodes.length==6){
+                for(var i=0;i<4;i++){
+                    if(oMain.childNodes[oMain.childNodes.length-1].
+                                    childNodes[i].mark){
+
+                        oCounter.innerHTML="游戏结束 最终得分:"+" "+num;
+                        clearInterval(timer);
+
+                        oStart.style.display="block";
+                        oStart.getElementsByTagName("span")[0].innerHTML="再来一次";
+                        oMain.onclick=null;
+
+                    }
+                }
+                oMain.removeChild(oMain.childNodes[oMain.childNodes.length-1]);
+            }
+
+
+
+        },20);
+
+    }
+    //当点击开始绑定事件
+    oStart.childNodes[1].onclick=function(){
+        oCounter.innerHTML="游戏开始";
+//        oError.style.display="none";
+        //强制刷新
+        if(oMain.children.length){
+            oMain.innerHTML="";
+        }
+
+
+        this.parentNode.style.display="none";
+        mainMove();
+    }
+
+</script>
+</html>
