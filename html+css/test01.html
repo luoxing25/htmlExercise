@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <style>
+
+        #main{
+
+            width:900px;
+            margin:auto;
+            border:1px solid #7c7d7e;
+            overflow: hidden;
+        }
+        #left{
+            width:200px;
+            height:100px;
+            background: #ac2925;
+            float:left;
+        }
+        #right{
+            width:700px;
+            height:auto;
+            background: #4bc8b6;
+            float:left;
+        }
+        dl{
+            margin:0;
+            padding:0;
+        }
+        dt{
+            background: #7c7d7e;
+        }
+        dd{
+            display:none;
+        }
+    </style>
+    <script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+    <div id="main">
+        <div id="left"></div>
+        <div id="right">
+            <dl id="dl">
+                <dt id="dt1">房中曲</dt>
+                <dd id="dd1">
+
+                    蔷薇泣幽素，翠带花钱小。<br>
+                    娇郎痴若云，抱日西帘晓。<br>
+                    枕是龙宫石，割得秋波色。<br>
+                    玉簟失柔肤，但见蒙罗碧。<br>
+                    忆得前年春，未语含悲辛。<br>
+                    归来已不见，锦瑟长于人。<br>
+                    今日涧底松，明日山头檗。<br>
+                    愁到天池翻，相看不相识。</dd>
+                <dt id="dt2">水槛遣心二首</dt>
+                <dd id="dd2">
+                    去郭轩楹敞，无村眺望赊。<br>
+                    澄江平少岸，幽树晚多花。<br>
+                    细雨鱼儿出，微风燕子斜。<br>
+                    城中十万户，此地两三家。<br>
+
+                    蜀天常夜雨，江槛已朝晴。<br>
+                    叶润林塘密，衣干枕席清。<br>
+                    不堪祗老病，何得尚浮名。<br>
+                    浅把涓涓酒，深凭送此生。</dd>
+                <dt id="dt3">去者日以疏</dt>
+                <dd id="dd3">
+
+                    去者日以疏，来者日以亲。<br>
+                    出郭门直视，但见丘与坟。<br>
+                    古墓犁为田，松柏摧为薪。<br>
+                    白杨多悲风，萧萧愁杀人。<br>
+                    思还故里闾，欲归道无因。<br>
+                </dd>
+                <dt id="dt4">去者日以疏</dt>
+                <dd id="dd4">
+
+                    去者日以疏，来者日以亲。<br>
+                    出郭门直视，但见丘与坟。<br>
+                    古墓犁为田，松柏摧为薪。<br>
+                    白杨多悲风，萧萧愁杀人。<br>
+                    思还故里闾，欲归道无因。<br>
+                </dd>
+                <dt id="dt5">去者日以疏</dt>
+                <dd id="dd5">
+
+                    去者日以疏，来者日以亲。<br>
+                    出郭门直视，但见丘与坟。<br>
+                    古墓犁为田，松柏摧为薪。<br>
+                    白杨多悲风，萧萧愁杀人。<br>
+                    思还故里闾，欲归道无因。<br>
+                </dd>
+            </dl>
+        </div>
+    </div>
+</body>
+<script>
+    $("#left").css("height",$("#right").css("height"));
+    var i=1;
+    for(i=1;i<6;i++){
+        (function(i){
+
+
+            $("#dt"+i).bind("click",function(){
+                if($("#dd"+i).css("display")=="none"){
+                    $("#dd"+i).css("display","block");
+                }else{
+                    $("#dd"+i).css("display","none");
+                }
+                $("#left").css("height",$("#right").css("height"));
+            })
+        })(i);
+    }
+</script>
+</html>

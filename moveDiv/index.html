@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>钢琴块</title>
+    <script src="../jquery/jquery.min-1.9.1.js"></script>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+
+        }
+        #main{
+            width:601px;
+            height:600px;
+            border:1px solid #101010;
+            margin:20px auto;
+        }
+        #gameArea{
+            width:400px;
+            height:600px;
+            border-right:1px solid #101010;
+            float:left;
+            position: relative;
+        }
+        #appArea{
+            width:200px;
+            height:600px;
+            float: right;
+            background-color: #4bc8b6;
+        }
+        #block{
+            width:400px;
+            height:120px;
+            position:absolute;
+            top:-120px;
+            left:0px;
+            background-color: #c9302c;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="gameArea">
+            <ul id="block">
+                <li></li>
+            </ul>
+        </div>
+        <div id="appArea">
+
+        </div>
+    </div>
+</body>
+<script>
+    var timer = setInterval(function(){
+        $("#block").style.top =$("#block")[0].offsetTop + 10 +"px";
+    },1000)
+
+</script>
+</html>
